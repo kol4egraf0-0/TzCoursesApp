@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CourseAppEM</string>
+    <string name="register_text">Нету аккаунта?<font color='#12B956'> Регистрация</font></string>
+</resources>
