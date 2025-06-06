@@ -51,6 +51,7 @@ dependencies {
     implementation(project(":data:remote"))
     implementation(project(":domain"))
     implementation("androidx.activity:activity-ktx:1.8.0")
+    implementation("com.github.ismaeldivita:chip-navigation-bar:1.4.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

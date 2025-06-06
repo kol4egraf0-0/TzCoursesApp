@@ -1,4 +1,4 @@
-package com.example.domain.viewmodels
+package com.example.presentation.login
 
 import android.util.Patterns
 import androidx.lifecycle.ViewModel

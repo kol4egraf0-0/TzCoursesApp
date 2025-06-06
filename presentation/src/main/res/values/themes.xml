@@ -3,8 +3,6 @@
         <item name="android:background">@color/blackbg</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@color/blackbg</item>
-        <item name="android:windowLightNavigationBar">false</item>
         <item name="materialButtonStyle">@style/AppButtonGreen</item>
     </style>
     <style name="AppButtonGreen" parent="Widget.AppCompat.Button">

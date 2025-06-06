@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:background="@color/blackbg"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:hint="Search courses..."
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:background="@drawable/rounded_eddittext_search"
+            android:drawablePadding="16dp"
+            android:textColorHint="@color/gray_for_edittext"
+            android:padding="18dp"
+            android:layout_width="0dp"
+            android:layout_height="60dp" />
+
+        <ImageView
+            android:id="@+id/filterButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="16dp"
+            android:src="@drawable/filter"
+            android:tint="@color/white"
+            android:background="@drawable/imagebutton_background"
+            android:clickable="false"
+            android:focusable="false"
+            tools:ignore="UseAppTint" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/sortButton"
+        style="@style/AppTextView"
+        android:text="По дате добавления ⇅"
+        android:textColor="@color/green"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/coursesRecyclerView"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

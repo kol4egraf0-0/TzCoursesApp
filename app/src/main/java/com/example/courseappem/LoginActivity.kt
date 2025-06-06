@@ -12,10 +12,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import androidx.lifecycle.Lifecycle
 import com.example.courseappem.databinding.ActivityLoginBinding
-import com.example.domain.viewmodels.LoginViewModel
+import com.example.presentation.login.LoginViewModel
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.example.domain.viewmodels.LoginState
+import com.example.presentation.login.LoginState
 import kotlinx.coroutines.launch
 
 
