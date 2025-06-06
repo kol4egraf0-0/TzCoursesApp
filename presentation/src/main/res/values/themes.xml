@@ -34,5 +34,12 @@
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textStyle">bold</item>
     </style>
+    <style name="GlassContainerStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/glass_background</item>
+        <item name="android:paddingHorizontal">8dp</item>
+        <item name="android:paddingVertical">8dp</item>
+    </style>
     <style name="Theme.CourseAppEM" parent="Base.Theme.CourseAppEM" />
 </resources>
