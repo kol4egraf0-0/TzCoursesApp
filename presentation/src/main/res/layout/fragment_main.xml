@@ -17,6 +17,7 @@
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:hint="Search courses..."
+            android:enabled="false"
             android:drawableStart="@android:drawable/ic_menu_search"
             android:background="@drawable/rounded_eddittext_search"
             android:drawablePadding="16dp"
@@ -47,10 +48,16 @@
         android:layout_gravity="end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/coursesRecyclerView"
-        android:layout_marginTop="8dp"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="26dp"
+        android:orientation="vertical">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/coursesRecyclerView"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 </LinearLayout>

@@ -5,7 +5,7 @@
         android:title="Главная" />
     <item
         android:id="@+id/menu_favorite"
-        android:icon="@drawable/bookmark"
+        android:icon="@drawable/bookmark_menu"
         android:title="Избранное" />
     <item
         android:id="@+id/menu_account"

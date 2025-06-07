@@ -4,7 +4,7 @@
     android:layout_width="328dp"
     android:layout_height="wrap_content"
     android:layout_marginTop="16dp"
-    android:backgroundTint="@color/dark_gray"
+    android:backgroundTint="@color/light_gray"
     app:cardCornerRadius="16dp"
     app:cardElevation="3dp">
 
@@ -18,12 +18,12 @@
             android:layout_width="0dp"
             android:layout_height="114dp"
             android:scaleType="centerCrop"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/bookmarkIcon"
             android:layout_width="28dp"
             android:layout_height="28dp"
@@ -31,9 +31,10 @@
             android:layout_marginEnd="8dp"
             android:background="@drawable/glass_image_background"
             android:tint="@color/white"
-            android:src="@drawable/bookmark"
+            android:src="@drawable/bookmark_selector"
             android:scaleType="centerInside"
             android:padding="6dp"
+            android:checkable="true"
             app:layout_constraintTop_toTopOf="@id/courseImage"
             app:layout_constraintEnd_toEndOf="@id/courseImage"
             tools:ignore="UseAppTint" />
@@ -59,6 +60,7 @@
                 android:backgroundTint="@color/white"
                 android:isIndicator="true"
                 android:numStars="1"
+                android:background="@android:color/transparent"
                 android:progressTint="@color/green"
                 android:rating="5"
                 android:scaleX="0.8"
@@ -67,10 +69,12 @@
                 android:stepSize="0.1" />
 
             <TextView
+                android:id="@+id/textRate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text="4.9"
+                android:background="@android:color/transparent"
                 android:textColor="@color/white"
                 android:textSize="13sp" />
         </LinearLayout>
@@ -92,6 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="22 Mar 2024"
+                android:background="@android:color/transparent"
                 android:textColor="@color/white"
                 android:textSize="12sp" />
         </LinearLayout>
@@ -121,6 +126,8 @@
             android:text="Описсание курса"
             android:textColor="@color/gray_for_edittext"
             android:textSize="14sp"
+            android:maxLines="2"
+            android:ellipsize="end"
             app:layout_constraintTop_toBottomOf="@id/titleCourse"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
