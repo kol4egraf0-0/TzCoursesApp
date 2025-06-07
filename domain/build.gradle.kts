@@ -38,7 +38,6 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation("androidx.activity:activity-ktx:1.8.0")
-    implementation(project(":data"))
     implementation(libs.androidx.appcompat)
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)

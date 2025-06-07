@@ -39,8 +39,6 @@ dependencies {
     implementation(libs.material)
     testImplementation(libs.junit)
     implementation(libs.androidx.appcompat)
-    implementation(project(":data"))
-    implementation(project(":domain"))
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
     implementation(libs.okhttp.logging)

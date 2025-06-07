@@ -4,12 +4,8 @@ plugins {
 }
 
 android {
-    namespace = "com.example.presentation"
+    namespace = "com.example.di"
     compileSdk = 35
-
-    buildFeatures {
-        viewBinding = true
-    }
 
     defaultConfig {
         minSdk = 32
@@ -28,26 +24,29 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 }
 
 dependencies {
+    implementation(project(":domain"))
+    implementation(project(":data"))
+    implementation(project(":presentation"))
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation("androidx.activity:activity-ktx:1.8.0")
-    implementation("com.github.ismaeldivita:chip-navigation-bar:1.4.0")
-    implementation(libs.glide)
-    implementation(project(":domain"))
-    testImplementation(libs.junit)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
+    implementation(libs.okhttp.logging)
     implementation(libs.koin.core)
     implementation(libs.koin.android)
+    implementation(libs.gson)
+    testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
