@@ -12,8 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.domain.viewmodels.entity.Course
 import com.example.presentation.R
+import com.example.presentation.fragment.favorite.FavoritesStorage
 
-class CourseAdapter(private var items: List<Course>) : RecyclerView.Adapter<CourseAdapter.CourseViewHolder>() {
+class CourseAdapter(private var items: List<Course>,
+                    private val favoritesStorage: FavoritesStorage) : RecyclerView.Adapter<CourseAdapter.CourseViewHolder>() {
 
     private var isSortedByDate = false
 
@@ -37,12 +39,20 @@ class CourseAdapter(private var items: List<Course>) : RecyclerView.Adapter<Cour
                 .load(android.R.drawable.ic_delete)
                 .into(imageView)
 
+            val isFavorite = favoritesStorage.isFav(course.id.toString())
+            bookmarkIcon.setColorFilter(
+                ContextCompat.getColor(itemView.context,
+                    if (isFavorite) R.color.green else R.color.white)
+            )
+            bookmarkIcon.isSelected = isFavorite
 
             bookmarkIcon.setOnClickListener {
                 bookmarkIcon.isSelected = !bookmarkIcon.isSelected
                 if (bookmarkIcon.isSelected) {
+                    favoritesStorage.addToFav(course.id.toString())
                     bookmarkIcon.setColorFilter(ContextCompat.getColor(itemView.context, R.color.green))
                 } else {
+                    favoritesStorage.removeFav(course.id.toString())
                     bookmarkIcon.setColorFilter(ContextCompat.getColor(itemView.context, R.color.white))
                 }
             }
