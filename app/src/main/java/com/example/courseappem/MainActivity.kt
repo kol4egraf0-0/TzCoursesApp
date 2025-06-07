@@ -1,7 +1,10 @@
 package com.example.courseappem
 
+import android.os.Build
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.courseappem.databinding.ActivityMainBinding
 import com.example.presentation.fragment.favorite.FavoriteFragment
 import com.example.presentation.fragment.main.MainFragment
@@ -20,27 +23,27 @@ class MainActivity : AppCompatActivity() {
                 .commit()
         }
 
-        binding.bottomNavigation.setOnItemSelectedListener {
-            when (it.itemId) {
-                com.example.presentation.R.id.menu_home -> {
+            window.navigationBarColor = ContextCompat.getColor(this, com.example.presentation.R.color.dark_gray)
+            window.decorView.systemUiVisibility = window.decorView.systemUiVisibility or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+
+        binding.bottomNavigation.onItemSelected = { position ->
+            when (position) {
+                0 -> {
                     supportFragmentManager.beginTransaction()
                         .replace(binding.fragmentContainer.id, MainFragment())
                         .commit()
-                    print("home selected")
                     true
                 }
-                com.example.presentation.R.id.menu_favorite -> {
+                1 -> {
                     supportFragmentManager.beginTransaction()
                         .replace(binding.fragmentContainer.id, FavoriteFragment())
                         .commit()
-                    print("fav selected")
                     true
                 }
-                com.example.presentation.R.id.menu_account -> {
+                2 -> {
                     supportFragmentManager.beginTransaction()
                         .replace(binding.fragmentContainer.id, ProfileFragment())
                         .commit()
-                    print("accc selected")
                     true
                 }
                 else -> false
